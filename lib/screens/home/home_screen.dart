@@ -3,6 +3,7 @@ import 'package:d_chart/ordinal/bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dashboard_test/components/bar_chart.dart';
 import 'package:flutter_dashboard_test/components/buttons.dart';
+import 'package:flutter_dashboard_test/components/desktop_header.dart';
 import 'package:flutter_dashboard_test/components/notifications.dart';
 import 'package:flutter_dashboard_test/components/service_request.dart';
 import 'package:flutter_dashboard_test/constants/constants.dart';
@@ -16,6 +17,7 @@ class HomeScreen extends StatelessWidget {
     Size _size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: secondaryColor,
       body: SafeArea(
         child: Padding(
           padding:
@@ -36,7 +38,10 @@ class HomeScreen extends StatelessWidget {
                                     onPressed: () {
                                       Scaffold.of(context).openEndDrawer();
                                     },
-                                    icon: Icon(Icons.menu_sharp)),
+                                    icon: Icon(
+                                      Icons.menu_sharp,
+                                      color: iconColor,
+                                    )),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
@@ -45,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                                       maxRadius: 20,
                                       child: const Text(
                                         "MA",
-                                        style: TextStyle(color: Colors.white),
+                                        style: TextStyle(color: primaryColor),
                                       ),
                                     ),
                                     const SizedBox(
@@ -63,6 +68,7 @@ class HomeScreen extends StatelessWidget {
                                             "Mudasir Asdf",
                                             style: TextStyle(
                                                 fontSize: 14,
+                                                color: titleColor,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           // SizedBox(
@@ -71,6 +77,7 @@ class HomeScreen extends StatelessWidget {
                                           Text(
                                             "Operation Manager",
                                             style: TextStyle(
+                                              color: subtitleColor,
                                               fontSize: 13,
                                             ),
                                           ),
@@ -81,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                                         onPressed: () {},
                                         icon: const Icon(
                                           Icons.logout_outlined,
-                                          color: kTextColor,
+                                          color: iconColor,
                                         )),
                                   ],
                                 )
@@ -91,85 +98,14 @@ class HomeScreen extends StatelessWidget {
                           Text(
                             "Dashboard",
                             style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
+                                color: titleColor,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
                     )
-                  : Container(
-                      height: 70,
-                      child: Row(
-                        // crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                "Dashboard",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                "Welcome back, Mudasir",
-                                style: TextStyle(
-                                    fontSize: 10, fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.notifications_none)),
-                              CircleAvatar(
-                                backgroundColor: Colors.grey.shade300,
-                                maxRadius: 20,
-                                child: const Text(
-                                  "MA",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              Container(
-                                color: Colors.transparent,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Text(
-                                      "Mudasir Asdf",
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    // SizedBox(
-                                    //   height: 6,
-                                    // ),
-                                    Text(
-                                      "Operation Manager",
-                                      style: TextStyle(
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.logout_outlined,
-                                    color: kTextColor,
-                                  )),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
+                  : DesktopHeader(),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
@@ -192,7 +128,7 @@ class HomeScreen extends StatelessWidget {
                           ? SizedBox()
                           : StaggeredGridTile.count(
                               crossAxisCellCount: 2,
-                              mainAxisCellCount: 1,
+                              mainAxisCellCount: 0.55,
                               child: ServiceRequest()),
                       StaggeredGridTile.count(
                           crossAxisCellCount: 1,
@@ -223,6 +159,7 @@ class HomeScreen extends StatelessWidget {
                                             Text(
                                               "Notifications",
                                               style: TextStyle(
+                                                color: smallTitleColor,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 17,
                                                 letterSpacing: 1,
@@ -231,6 +168,7 @@ class HomeScreen extends StatelessWidget {
                                             Text(
                                               "View All",
                                               style: TextStyle(
+                                                  color: subtitleColor,
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 13,
                                                   decoration:
@@ -307,43 +245,5 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class Tile extends StatelessWidget {
-  const Tile({
-    Key? key,
-    required this.index,
-    this.extent,
-    this.backgroundColor,
-    this.bottomSpace,
-  }) : super(key: key);
-
-  final int index;
-  final double? extent;
-  final double? bottomSpace;
-  final Color? backgroundColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final child = Container(
-      color: Colors.grey,
-      height: extent,
-      child: Center(
-        child: CircleAvatar(
-          minRadius: 20,
-          maxRadius: 20,
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          child: Text('$index', style: const TextStyle(fontSize: 20)),
-        ),
-      ),
-    );
-
-    if (bottomSpace == null) {
-      return child;
-    }
-
-    return Expanded(child: child);
   }
 }

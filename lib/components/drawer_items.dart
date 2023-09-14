@@ -42,12 +42,12 @@ class DrawerMenuItems extends StatelessWidget {
                 children: [
                   Icon(
                     icon,
-                    color: kTitleTextColor,
+                    color: iconColor,
                   ),
                   SizedBox(width: kDefaultPaddingHorizontal * 0.75),
                   Text(title,
                       style: TextStyle(
-                        color: kTitleTextColor,
+                        color: smallTitleColor,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.4,
                       )),

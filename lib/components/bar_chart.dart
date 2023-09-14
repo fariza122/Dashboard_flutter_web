@@ -27,7 +27,7 @@ class BarChart extends StatelessWidget {
       OrdinalGroup(
         id: '1',
         data: ordinalList,
-        color: kPrimaryColor,
+        color: barColor,
       ),
     ];
 
@@ -46,7 +46,10 @@ class BarChart extends StatelessWidget {
           const Text(
             "Transactions",
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 17, letterSpacing: 1),
+                color: smallTitleColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+                letterSpacing: 1),
           ),
           Expanded(
             child: AspectRatio(

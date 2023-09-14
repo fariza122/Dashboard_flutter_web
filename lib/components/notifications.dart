@@ -16,7 +16,7 @@ class Notifications extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(left: 16, right: 16, top: 5, bottom: 5),
       decoration: BoxDecoration(
-          border: Border.all(color: kButtonColor),
+          border: Border.all(color: buttonColor),
           borderRadius: BorderRadius.circular(12)),
       child: Row(
         children: <Widget>[

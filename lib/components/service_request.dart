@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dashboard_test/constants/constants.dart';
 
 class ServiceRequest extends StatelessWidget {
   const ServiceRequest({super.key});
@@ -23,6 +24,7 @@ class ServiceRequest extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 17,
+                  color: smallTitleColor,
                   letterSpacing: 1,
                 ),
               ),
@@ -30,6 +32,7 @@ class ServiceRequest extends StatelessWidget {
                 "View All",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    color: subtitleColor,
                     fontSize: 13,
                     decoration: TextDecoration.underline),
               ),
@@ -43,7 +46,7 @@ class ServiceRequest extends StatelessWidget {
             children: [
               //This table row is for the table header which is static
               TableRow(
-                  decoration: BoxDecoration(color: Colors.grey.shade200),
+                  decoration: BoxDecoration(color: secondaryColor),
                   children: const [
                     Padding(
                       padding:
@@ -51,7 +54,8 @@ class ServiceRequest extends StatelessWidget {
                       child: Text(
                         "Property",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black87),
+                            fontWeight: FontWeight.bold,
+                            color: smallTitleColor),
                       ),
                     ),
                     Padding(
@@ -59,7 +63,8 @@ class ServiceRequest extends StatelessWidget {
                       child: Text(
                         "Type",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black87),
+                            fontWeight: FontWeight.bold,
+                            color: smallTitleColor),
                       ),
                     ),
                     Padding(
@@ -67,7 +72,8 @@ class ServiceRequest extends StatelessWidget {
                       child: Text(
                         "Request By",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black87),
+                            fontWeight: FontWeight.bold,
+                            color: smallTitleColor),
                       ),
                     ),
                     Padding(
@@ -75,7 +81,8 @@ class ServiceRequest extends StatelessWidget {
                       child: Text(
                         "Status",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black87),
+                            fontWeight: FontWeight.bold,
+                            color: smallTitleColor),
                       ),
                     ),
                   ]),

@@ -92,7 +92,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 19,
-                          color: kBgDarkColor),
+                          color: titleColor),
                     )
                   ],
                 ),
@@ -409,7 +409,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
                               vertical: 20, horizontal: 20),
-                          backgroundColor: kButtonColor,
+                          backgroundColor: buttonColor,
                           maximumSize: Size(150, 60)),
                       onPressed: () {
                         final isValid = _formKey.currentState?.validate();

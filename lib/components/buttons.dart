@@ -21,7 +21,7 @@ class Buttons extends StatelessWidget {
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),
-                    backgroundColor: kButtonColor),
+                    backgroundColor: buttonColor),
                 onPressed: () {},
                 child: Text(
                   "Properties \u{00B3}",
@@ -33,7 +33,7 @@ class Buttons extends StatelessWidget {
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),
-                    backgroundColor: kButtonColor),
+                    backgroundColor: buttonColor),
                 onPressed: () {},
                 child: Text(
                   "Service Providers \u{2075}",
@@ -45,7 +45,7 @@ class Buttons extends StatelessWidget {
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),
-                    backgroundColor: kButtonColor),
+                    backgroundColor: buttonColor),
                 onPressed: () {},
                 child: Text(
                   "Open Request \u{2070}",
